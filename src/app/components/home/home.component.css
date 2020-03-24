@@ -1,0 +1,18 @@
+.fondo {
+    background: url("../../../assets/fondo2.jpg");
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    overflow: hidden;
+}
+
+.container {
+    width: 60%;
+}
+
+.card {
+    background: rgba(146, 13, 146, 0.651);
+}

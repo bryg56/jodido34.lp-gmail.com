@@ -1,0 +1,44 @@
+<div class="fondo">
+    <div class="container">
+        <div class="jumbotron text-center bg-transparent">
+            <div [formGroup]="formulario">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 ">
+                        <img src="../../../assets/Icon.jpg" alt="">
+                    </div>
+                    <div class="col-6 ">
+                        <h1 class="m-4 text-dark">Ingresa tus datos</h1>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-6 forms text-center">
+                        <div class="form-group ">
+                            <h4>Email</h4>
+                            <input id="Email" class="form-control d-flex justify-content-center" type="text" name="" formControlName="Email">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-6 forms">
+                        <div class="form-group ">
+                            <h4>Password</h4>
+                            <input id="pass" formControlName="pass" class="form-control d-flex justify-content-center" type="password" name="">
+                        </div>
+                        <div class="form-group">
+                            <h4>Repita contraseña</h4>
+                            <input id="password2" formControlName="password2" class="form-control" type="password" name="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-6 text-center m-1">
+                        <button type="button" name="" id="" *ngIf="formulario.valid" (click)="registerUser()" class="btn btn-warning btn-lg btn-block">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

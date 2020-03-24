@@ -1,0 +1,47 @@
+<div class="fondo">
+    <div class="container botonDiv1" [formGroup]="formulario">
+        <div class="jumbotron text-center bg-transparent">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 ">
+                    <img src="../../../assets/Icon.jpg" alt="">
+                </div>
+                <div class="col-12">
+                    <h1 class="m-4">Bienvenido</h1>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-6 forms text-center">
+                    <div class="form-group ">
+                        <h4>Email</h4>
+                        <input id="my-input" formControlName="Email" class="form-control d-flex justify-content-center" type="text" name="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-6 forms">
+                    <div class="form-group ">
+                        <h4>Password</h4>
+                        <input id="my-input" formControlName="pass" class="form-control d-flex justify-content-center" type="password" name="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-6 text-center m-1">
+                    <button type="button" name="" id="" *ngIf="formulario.valid" (click)="logUser()" class="btn btn-lg btn-block btn-dark">Acceder</button>
+                </div>
+            </div>
+            <div class="row  d-flex justify-content-center">
+                <div class="col-6  m-1">
+                    <h1>¿Aun no te has registrado?</h1>
+                    <!-- <button type="button" routerLink="/register" name="" id="" class="btn btn-lg btn-block btn-outline-light">Registrar</button> -->
+                    <a routerLink="/register">
+                        <h4 class="text-light">Registrar</h4>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

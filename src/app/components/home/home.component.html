@@ -1,0 +1,73 @@
+<div class="fondo">
+    <div class="row d-flex justify-content-end">
+        <div class="col-2 m-2">
+            <button type="button" name="" id="" (click)="open(content,false,null)" class="btn btn-success btn-lg btn-block">Add User</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-12">
+                <div class="form-group">
+                    <input id="my-input" [formControl]="search" placeholder="buscar usuario" class="form-control" type="text" name="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card-columns">
+                    <div class="card" *ngFor="let person of persons">
+                        <img [src]="person.avatar" class="card-img-top" alt="...">
+                        <div class="card-body text-light">
+                            <h5 class="card-title">{{person.first_name}} {{person.last_name}}</h5>
+                            <p class="card-text">{{person.email}}</p>
+                            <div class="box">
+                                <button type="button" name="" id="" (click)="open(content,true,person.id)" class="btn btn-lg btn-outline-warning btn-block">Modificar</button>
+                                <button type="button" name="" id="" class="btn btn-outline-dark btn-lg btn-block">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" *ngIf="red" id="modal-basic-title">Update user</h4>
+        <h4 class="modal-title" *ngIf="!red" id="modal-basic-title">Add user</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div class="modal-body" [formGroup]="formulario">
+        <div class="form-group">
+            <label for="userName">User</label>
+            <input id="userName" class="form-control" formControlName="userName" type="text" name="">
+        </div>
+        <div class="form-group">
+            <label for="job">Job</label>
+            <input id="job" class="form-control" type="text" name="" formControlName="job">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" [disabled]="formulario.invalid" (click)="modal.close()">
+      Save
+    </button>
+    </div>
+</ng-template>
+<!-- <ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <h1>HOLA</h1>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template> -->
